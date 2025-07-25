@@ -62,14 +62,13 @@ router.post("/login", async (req, res) => {
     // 4. Create a JWT token for the authenticated user
     // JWT token contains user information and is signed with a secret key
     // This token will be used to identify the user in future requests
-    const token = jwt.sign( //jwt.sign() creates a JWT token
+    const token = jwt.sign(
       { 
-        userId: userData.id,  //This is the data embedded inside the token (called the "payload"). It means when the user logs in, their: userId, email, and name are all packed into the token.
+        userId: userData.id, 
         email: userData.email,
         name: userData.name 
       },
-      "your-secret-key", //This is the key used to digitally sign the token so that no one can tamper with the data.
-                          //In production, this should be stored safely in a .env file like:
+      process.env.JWT_SECRET, // Use secret from environment variable
       { expiresIn: "24h" } // Token expires in 24 hours
     );
 
@@ -77,7 +76,7 @@ router.post("/login", async (req, res) => {
     res.json({
       message: "Login successful",
       token: token, // This token should be stored in frontend (localStorage/cookies)
-      user: { 
+      user: {
         id: userData.id,
         name: userData.name,
         email: userData.email
@@ -89,8 +88,6 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
-
-module.exports = router;
 
 // ================= JWT Authentication Middleware =================
 // This middleware checks if the request has a valid JWT token
@@ -112,16 +109,17 @@ function authenticateToken(req, res, next) {
   }
 
   // Verify the token
-  jwt.verify(token, "your-secret-key", (err, user) => {
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
       // If token is invalid or expired
       return res.status(403).json({ message: 'Invalid or expired token.' });
     }
     // Attach user info from token to request object
-    req.user = user;// which means req.user.userId, req.user.email, req.user.name now give details of the user
+    req.user = user;
     next(); // Continue to the protected route
   });
 }
 
 // Export the middleware so it can be used in other files
+module.exports = router;
 module.exports.authenticateToken = authenticateToken;

@@ -89,7 +89,8 @@ The Lost & Found backend provides a secure and efficient platform for users to r
    **Screenshots of the website in working**
 <img width="700" height="300" alt="Screenshot 2025-08-12 112920" src="https://github.com/user-attachments/assets/fb63cd29-690b-4236-bd81-8325764cb1ef" />
 -
-<img width="700" height="300" alt="Screenshot 2025-08-12 112933" src="https://github.com/user-attachments/assets/b4837af6-6cef-4e08-a385-730495db3443" />
+<img width="700" height="300" alt="Screenshot 2025-08-12 113011" src="https://github.com/user-attachments/assets/07acdab0-5612-47f0-8a7c-d275740426e9" />
+
 -
 <img width="700" height="300" alt="Screenshot 2025-08-12 112949" src="https://github.com/user-attachments/assets/504994cf-ffb2-4358-bef4-a2156971bba6" />
 -

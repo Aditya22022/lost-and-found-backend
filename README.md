@@ -87,7 +87,7 @@ The Lost & Found backend provides a secure and efficient platform for users to r
    - See and interact with the full-stack app at [CodeSandbox Lost & Found](https://codesandbox.io/p/sandbox/lostnfound-cgj6mw).
 
    **Screenshots of the website in working**
-<img width="2821" height="1628" alt="Screenshot 2025-08-12 112920" src="https://github.com/user-attachments/assets/fb63cd29-690b-4236-bd81-8325764cb1ef" />
+<img width="2500" height="1000" alt="Screenshot 2025-08-12 112920" src="https://github.com/user-attachments/assets/fb63cd29-690b-4236-bd81-8325764cb1ef" />
 
 
 
